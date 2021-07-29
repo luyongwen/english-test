@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary</title>
+    <script type="text/javascript" src="static/js/action.js"></script>
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+    <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <table style="font-size:18px;" border="2" id='en' class="pure-table">
+        <caption style="font-size:15px;">100单词表</caption>
+        {% for words in en %}
+        {% if loop.index%2 == 0 %}
+        <tr class="pure-table-odd">
+            {% for word in words %}
+            <td> {{ word }} </td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% if loop.index%2 == 1 %}
+        <tr>
+            {% for word in words %}
+            <td> {{ word }} </td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <br>
+    <button onclick="change()">查看答案</button>
+    <table style="font-size:18px;display:none;" border="2" id='en_ch' class="pure-table">
+        <caption style="font-size:15px;">100单词表</caption>
+        {% for words in en_ch %}
+        {% if loop.index%2 == 0 %}
+        <tr class="pure-table-odd">
+            {% for word in words %}
+            <td> {{ word }} </td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% if loop.index%2 == 1 %}
+        <tr>
+            {% for word in words %}
+            <td> {{ word }} </td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</body>
+
+</html>
