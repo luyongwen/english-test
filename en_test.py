@@ -3,7 +3,7 @@ import pandas as pd
 from HTMLTable import HTMLTable
 from bs4 import BeautifulSoup
 
-def get_word():
+def get_jms_word():
     df = pd.read_csv('./中考英语词汇表.txt', sep='\t', names=['单词', '发音', '中文'])
     df['单词'] = df['单词'].str.strip()
     df['发音'] = df['发音'].str.strip()

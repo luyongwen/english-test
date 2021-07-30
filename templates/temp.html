@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <table style="font-size:18px;" border="2" id='en' class="pure-table">
+    <!-- <table style="font-size:18px;" border="2" id='en' class="pure-table">
         <caption style="font-size:15px;">100单词表</caption>
         {% for words in en %}
         {% if loop.index%2 == 0 %}
@@ -32,13 +32,12 @@
         {% endif %}
         {% endfor %}
     </table>
-    <br>
-    <button onclick="change()">查看答案</button>
-    <table style="font-size:18px;display:none;" border="2" id='en_ch' class="pure-table">
-        <caption style="font-size:15px;">100单词表</caption>
+    <br> -->
+    <table style="font-size:16px;" border="2" id='en_ch' class="pure-table">
+        <caption style="font-size:18px;">100单词表</caption>
         {% for words in en_ch %}
         {% if loop.index%2 == 0 %}
-        <tr class="pure-table-odd">
+        <tr class="pure-table-odd" style="visibility:hidden;" id="ch">
             {% for word in words %}
             <td> {{ word }} </td>
             {% endfor %}
@@ -53,6 +52,7 @@
         {% endif %}
         {% endfor %}
     </table>
+    <button onclick="change()">查看答案</button>
 </body>
 
 </html>
